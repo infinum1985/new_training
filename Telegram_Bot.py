@@ -1,4 +1,4 @@
-""""Это простенький Telegram Bot. Введите /start, он попросит у вас дальше город"""
+""""Это простенький Telegram Bot: infinumtraining. Введите /start, он попросит у вас дальше город"""
 
 from aiogram import Bot, Dispatcher ,executor, types
 
