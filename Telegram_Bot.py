@@ -9,9 +9,15 @@ TOKEN_API='5909256359:AAF_ERx3U_dIhvMrrIHpeirEhTzxXGUgr-s'
 API='85b4238efd01857c933287e532def16b'
 bot=Bot(token=TOKEN_API)
 dp=Dispatcher(bot)
+
+async def on_startup(_):
+    print('GO!!!')
+
+
+
 @dp.message_handler(commands=['start'])
 async def echo(message: types.Message):
-    await message.reply('Привет, напиши город')              # написать сообщение
+    await message.reply('Привет, напиши город')
 
 @dp.message_handler()
 async def get_weather(message: types.Message):
@@ -38,4 +44,4 @@ async def get_weather(message: types.Message):
 
 
 if __name__ == '__main__':
-    executor.start_polling(dp)
+    executor.start_polling(dp,skip_updates=True,on_startup=on_startup)
